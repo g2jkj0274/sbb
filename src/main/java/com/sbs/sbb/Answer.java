@@ -19,6 +19,6 @@ public class Answer {
 
     private LocalDateTime createDate;
 
-    @ManyToOne
+    @ManyToOne // many: answer, one: question - 알아서 question_id로 만듦
     private Question question;
 }

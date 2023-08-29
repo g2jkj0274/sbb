@@ -9,16 +9,16 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Entity // question 테이블
 public class Question {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // Primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
     private Integer id;
 
-    @Column(length = 200)
+    @Column(length = 200) // VARCHAR(200)
     private String subject;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT") // TEXT
     private String content;
 
     private LocalDateTime createDate;
