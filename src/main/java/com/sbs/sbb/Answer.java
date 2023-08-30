@@ -8,17 +8,19 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@Entity
+@Entity // answer 테이블
 public class Answer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // Primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
     private Integer id;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT") // TEXT
     private String content;
 
     private LocalDateTime createDate;
 
-    @ManyToOne // many: answer, one: question - 알아서 question_id로 만듦
+    // many: answer, one: question - 알아서 question_id로 만듦
+    // ManyToOne은 필수
+    @ManyToOne
     private Question question;
 }

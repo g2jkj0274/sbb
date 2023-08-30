@@ -23,6 +23,9 @@ public class Question {
 
     private LocalDateTime createDate;
 
+    // mappedBy : Answer 클래스의 question 변수 이름을 적어야 합니다.
+    // CascadeType.REMOVE를 하면 Question을 삭제할 때 답변도 함께 삭제됩니다.
+    // OneToMany는 테이블의 칼럼으로 생성되지 않습니다.
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     private List<Answer> answerList;
 }
