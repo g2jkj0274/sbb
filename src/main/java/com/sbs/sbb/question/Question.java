@@ -1,6 +1,7 @@
 package com.sbs.sbb.question;
 
 import com.sbs.sbb.answer.Answer;
+import com.sbs.sbb.user.SiteUser;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,4 +30,7 @@ public class Question {
     // OneToMany는 테이블의 칼럼으로 생성되지 않습니다.
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     private List<Answer> answerList;
+
+    @ManyToOne
+    private SiteUser author;
 }
